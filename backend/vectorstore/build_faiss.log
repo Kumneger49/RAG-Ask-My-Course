@@ -1,0 +1,9 @@
+2025-07-21 12:09:41,951 - INFO - Loading embedded chunks from /Users/kumnegermatewos/Desktop/projects/RAG-Ask My Course/ask_my_course/backend/vectorstore/../core/embedded_chunks.pkl
+2025-07-21 12:12:24,785 - INFO - Loading embedded chunks from /Users/kumnegermatewos/Desktop/projects/RAG-Ask My Course/ask_my_course/backend/vectorstore/../../embedded_chunks.pkl
+2025-07-21 12:12:24,787 - INFO - Loaded 274 embedded chunks.
+2025-07-21 12:12:24,787 - INFO - Embeddings shape: (274, 384)
+2025-07-21 12:12:24,788 - INFO - Adding embeddings to FAISS index...
+2025-07-21 12:12:24,788 - INFO - FAISS index contains 274 vectors.
+2025-07-21 12:12:24,788 - INFO - FAISS index saved to /Users/kumnegermatewos/Desktop/projects/RAG-Ask My Course/ask_my_course/backend/vectorstore/faiss.index
+2025-07-21 12:12:24,788 - INFO - Metadata mapping saved to /Users/kumnegermatewos/Desktop/projects/RAG-Ask My Course/ask_my_course/backend/vectorstore/faiss_metadata.pkl
+2025-07-21 12:12:24,788 - INFO - FAISS index build complete.

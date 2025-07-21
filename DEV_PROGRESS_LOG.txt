@@ -1,0 +1,38 @@
+# Ask My Course - Developer Progress Log
+
+## Project Initialization
+- Created project directory structure for a full-stack RAG-based QA system.
+- Added README.md with project overview and structure.
+
+## Document Ingestion
+- Implemented `ingest.py` in `backend/utils/` to read PDF, TXT, and MD files from the `data/` directory.
+- Each file is parsed and stored as a dict with filename, type, and extracted text.
+- Added detailed logging for each step of ingestion.
+
+## Chunking
+- Implemented `chunk_documents` in `backend/core/chunk_and_embed.py` using LangChain's `RecursiveCharacterTextSplitter`.
+- Chunks are created with a default size of 500 characters and 50-character overlap.
+- Each chunk keeps track of its source file and position.
+
+## Embedding
+- Implemented `embed_chunks` in `backend/core/chunk_and_embed.py` using the `BAAI/bge-small-en-v1.5` model from `sentence-transformers`.
+- Each chunk is embedded and the vector is added to the chunk's dictionary.
+
+## Pipeline Orchestration
+- Created `run_pipeline.py` in `backend/core/` to orchestrate ingestion, chunking, and embedding.
+- Pipeline logs all progress to both the console and a `pipeline.log` file.
+- Chunks and embedded chunks are saved to disk as `chunks.pkl` and `embedded_chunks.pkl` for later use.
+
+## FAISS Vector Store
+- Built a FAISS FlatL2 index from 274 embedded chunks (shape: 274, 384).
+- Saved the index to `backend/vectorstore/faiss.index` and metadata to `backend/vectorstore/faiss_metadata.pkl`.
+- All steps logged in `build_faiss.log`.
+
+## Next Steps
+- Store embeddings in a FAISS vector database for fast retrieval.
+- Build retrieval and question-answering logic.
+- Expose API endpoints with FastAPI.
+- (Optional) Add a frontend UI.
+
+---
+This log is updated at each major development milestone to help future developers (and myself) understand the evolution and decisions of the project. 
